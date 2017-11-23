@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=5 format=1]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Weapon/Weapon.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -28,5 +29,21 @@ texture = ExtResource( 2 )
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+
+enabled = true
+cast_to = Vector2( -35, 0 )
+layer_mask = 1
+type_mask = 15
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+
+enabled = true
+cast_to = Vector2( 35, 0 )
+layer_mask = 1
+type_mask = 15
+
+[node name="Weapon" parent="." instance=ExtResource( 3 )]
 
 
