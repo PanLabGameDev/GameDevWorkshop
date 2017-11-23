@@ -8,7 +8,6 @@ const gravity_multiplier = 3
 
 onready var ray_left = get_node("RayCastLeft")
 onready var ray_right = get_node("RayCastRight")
-onready var weapon = get_node("Weapon")
 
 var velocity = Vector2()
 var jump_num = 0
@@ -67,9 +66,6 @@ func _input(event):
 		
 	if event.is_action_pressed("jump"):
 		jump()
-		
-	if event.is_action_pressed("shoot"):
-		weapon.shoot()
 		
 func collected():
 	print("player collected item")
